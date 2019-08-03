@@ -1,0 +1,86 @@
+$height: 100vh;
+$width: 100vw;
+
+%TileProps {
+  height: $height;
+  width: $width;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+html,body{
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+}
+
+.AppContainer {
+  font-family: 'Roboto';
+  width: $width;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+}
+
+.Header{
+  position: fixed;
+  width: $width;
+  max-height: 120px;
+  min-height: 45px;
+  background-color: white;
+  ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.Tile1{
+  @extend %TileProps;
+  height: $height*.9;
+  background-color: bisque;
+  scroll-snap-align: start;
+  h1{
+    margin: auto auto 0px auto;
+    font-size: 5em;
+  }
+  p{
+    margin: 10px auto auto auto;
+    font-size: 1em;
+  }
+}
+
+.Tile2{
+  @extend %TileProps;
+  background-color: whitesmoke;
+  scroll-snap-align: start;
+  h1{
+    color: black;
+  }
+}
+
+.Tile3{
+  @extend %TileProps;
+  background-color: bisque;
+  scroll-snap-align: start;
+  h1{
+    color: black;
+  }
+}
+
+.Tile4{
+  @extend %TileProps;
+  background-color: whitesmoke;
+  scroll-snap-align: start;
+  h1{
+    color:black;
+  }
+}
+
+
+  
+
