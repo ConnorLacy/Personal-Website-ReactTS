@@ -1,85 +1,112 @@
 $height: 100vh;
+$headerheight: 10vh;
 $width: 100vw;
 
-%TileProps {
-  height: $height;
-  width: $width;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  scroll-snap-align: start;
-}
-
-html,body{
-  overflow-y: scroll;
-  scroll-snap-type: mandatory;
-}
-
-.AppContainer {
+body{
   font-family: 'Roboto';
-  width: $width;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-
+  margin:0px;
+  overflow: hidden;
 }
 
-.Header{
+Header{
   position: fixed;
+  top: 0;
   width: $width;
-  max-height: 120px;
-  min-height: 45px;
-  background-color: white;
+  height: $headerheight;
   ul{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 }
 
-.Tile1{
-  @extend %TileProps;
-  height: $height*.9;
-  background-color: bisque;
-  scroll-snap-align: start;
-  h1{
-    margin: auto auto 0px auto;
-    font-size: 5em;
-  }
-  p{
-    margin: 10px auto auto auto;
-    font-size: 1em;
-  }
+.page-body {
+  text-align: center;
+  width: $width;
+  margin-top: $headerheight;
 }
 
-.Tile2{
-  @extend %TileProps;
-  background-color: whitesmoke;
-  scroll-snap-align: start;
-  h1{
-    color: black;
-  }
+.container {
+  width: $width;
+  height: $height;
+  overflow: scroll;
+  position: relative;
 }
 
-.Tile3{
-  @extend %TileProps;
-  background-color: bisque;
-  scroll-snap-align: start;
-  h1{
-    color: black;
-  }
+.y-mandatory {
+  scroll-snap-type: y mandatory;
 }
 
-.Tile4{
-  @extend %TileProps;
-  background-color: whitesmoke;
+.tile {
+  width: $width;
+  height: $height;
   scroll-snap-align: start;
-  h1{
-    color:black;
-  }
+  scroll-snap-stop: normal;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.tile:nth-child(1){
+  height: $height - $headerheight;
+  background: bisque;
+}
+.tile:nth-child(2) {
+  background: beige;
+}
+.tile:nth-child(3) {
+  background: bisque;
+}
+.tile:nth-child(4) {
+  background: beige;
+}
+
+
+
+// .TileContainer{
+//   overflow: auto;
+//   scroll-snap-type: y mandatory;
+// }
+
+// .Tile1{
+//   @extend %TileProps;
+//   height: $height*.9;
+//   background-color: bisque;
+//   h1{
+//     margin: auto auto 0px auto;
+//     font-size: 5em;
+//   }
+//   p{
+//     margin: 10px auto auto auto;
+//     font-size: 1em;
+//   }
+// }
+
+// .Tile2{
+//   @extend %TileProps;
+//   background-color: whitesmoke;
+//   h1{
+//     color: black;
+//   }
+// }
+
+// .Tile3{
+//   @extend %TileProps;
+//   background-color: bisque;
+//   h1{
+//     color: black;
+//   }
+// }
+
+// .Tile4{
+//   @extend %TileProps;
+//   background-color: whitesmoke;
+//   h1{
+//     color:black;
+//   }
+// }
 
 
   
