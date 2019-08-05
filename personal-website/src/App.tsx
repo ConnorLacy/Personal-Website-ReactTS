@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.scss';
 import Projects from './Projects';
+import Email from './assets/Outlook_icon.png';
+import LinkedIn from './assets/LinkedIn_icon.png';
+import Github from './assets/GitHub_icon.png';
 
 const handleClick = (evt: any) => {
   switch(evt.target.value){
@@ -18,25 +21,27 @@ const handleClick = (evt: any) => {
 
 const App: React.FC = () => {
   return (
-    <div className="Page">
+    <div className="page-container y-scroll y-mandatory">
       <header className="Header">
-        <h1>Header items</h1>
+        <div className="headerbuttons">
+          <img src={Email} alt="Email Link"/>
+          <img src={LinkedIn} alt=""/>
+          <img src={Github} alt=""/>
+        </div>
       </header>
-      <div className="page-container y-scroll y-proximity">
-        <div className="sidenav">
-          <ul>
-            <li value={1} onClick={handleClick}></li>
-            <li value={2} onClick={handleClick}></li>
-            <li value={3} onClick={handleClick}></li>
-            <li value={4} onClick={handleClick}></li>
-          </ul>
-        </div>
-        <div className="tile-wrapper">
-          <div className="tile" id="Title">Title Page</div>
-          <div className="tile" id="About">About Me</div>
-          <div className="tile" id="Portfolio">Portfolio<Projects/></div>
-          <div className="tile" id="Social">Social Links</div>
-        </div>
+      <div className="sidenav">
+        <ul>
+          <li value={1} onClick={handleClick}></li>
+          <li value={2} onClick={handleClick}></li>
+          <li value={3} onClick={handleClick}></li>
+          <li value={4} onClick={handleClick}></li>
+        </ul> 
+      </div>
+      <div className="tile-wrapper">
+        <div className="tile" id="Title">Connor Lacy</div>
+        <div className="tile" id="About">About Me</div>
+        <div className="tile" id="Portfolio">Portfolio<Projects/></div>
+        <div className="tile" id="Social">Let's Connect</div>
       </div>
     </div>
   );
