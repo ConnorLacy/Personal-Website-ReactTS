@@ -13,7 +13,8 @@ const App: React.FC = () => {
             <div className="tile-wrapper">
               <div className="tile">Title Page</div>
               <div className="tile">About Me</div>
-              <div className="tile">Portfolio</div>
+              <div className="tile">Portfolio
+              <Projects/></div>
               <div className="tile">Social Links</div>
             </div>
           </div>
