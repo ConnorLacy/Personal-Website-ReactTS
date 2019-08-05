@@ -22,7 +22,7 @@ const App: React.FC = () => {
       <header className="Header">
         <h1>Header items</h1>
       </header>
-      <div className="container y-scroll y-proximity">
+      <div className="page-container y-scroll y-proximity">
         <div className="sidenav">
           <ul>
             <li value={1} onClick={handleClick}></li>

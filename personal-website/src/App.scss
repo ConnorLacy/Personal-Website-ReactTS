@@ -31,7 +31,7 @@ Header{
   height: $pagebodyheight;
 }
 
-.sidenav{
+.sidenav {
   display: flex;
   position: fixed;
   height: $height;
@@ -54,18 +54,17 @@ Header{
       color: white;
       z-index: 10;
     }
-
-    li:hover, li:focus{
-      opacity: 1;
-      box-shadow: 0 5px 30px 0 rgba(137,113,241,.8);
+      li:hover, li:focus{
+        opacity: 1;
+        box-shadow: 0 5px 30px 0 rgba(137,113,241,.8);
+      }
     }
-  }
 }
 
-.container {
+.page-container {
   width: $width;
   height: $pagebodyheight;
-  overflow: scroll;
+  overflow: hidden scroll;
   position: relative;
 }
 
@@ -83,6 +82,7 @@ Header{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 50px;
 }
 .tile:nth-child(1){
   height: $pagebodyheight;
@@ -92,9 +92,62 @@ Header{
   background: beige;
 }
 .tile:nth-child(3) {
+  justify-content: unset;
   flex-direction: column;
   background: bisque;
 }
 .tile:nth-child(4) {
   background: beige;
+}
+
+.ProjectComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.project-container {
+  width: 80%;
+  height: 100vh;
+  overflow: scroll hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-container::-webkit-scrollbar-track{
+  display: none;
+}
+
+.project-container::-webkit-scrollbar-track-piece{
+  margin-top: 10px;
+  background: white;
+  display: block;
+}
+
+.x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+
+.projects-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.project {
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin: 10px 220px;
+}
+
+.project:nth-child(even){
+  background: black;
+}
+.project:nth-child(odd) {
+  background: grey;
 }
